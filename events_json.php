@@ -14,9 +14,10 @@ $user_email=$_POST['user_email'];
     {
         array_push($eventarray,array("event_id"=>$row[0],"EventName"=>$row[1]));
     }
-    
+
     //echo json_encode($eventarray);
  echo json_encode(array("server_response"=>$eventarray));
 
  mysqli_close($conn);
  ?>
+ 
