@@ -10,7 +10,7 @@ $sql="SELECT * from user where fname LIKE '$argument%' OR lname LIKE '$argument%
 
  $result = mysqli_query($conn, $sql);
 
-//create an array
+   //create an array
     $eventarray = array();
     while($row = mysqli_fetch_assoc($result))
     {
