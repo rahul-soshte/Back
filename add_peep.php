@@ -14,13 +14,13 @@ $sql="SELECT * from (SELECT * from user where fname LIKE '$argument%' OR lname L
  $result = mysqli_query($conn, $sql);
 
    //create an array
-    $eventarray = array();
+    $peeparray = array();
     while($row = mysqli_fetch_assoc($result))
     {
-        $eventarray[] = $row;
+        $peeparray[] = $row;
     }
 
-    echo json_encode($eventarray);
+    echo json_encode($peeparray);
 
  mysqli_close($conn);
 ?>
