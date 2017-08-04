@@ -26,10 +26,10 @@
  
  //getting name from the request 
  $name = $_POST['name'];
-$rentPerDay=$_POST['rentperday'];
-$user_email=$_POST['user_email'];
+ $rentPerDay=$_POST['rentperday'];
+ $user_email=$_POST['user_email'];
 
-$sql="SELECT user_id as user_id from user where email_id='$user_email'"; 
+ $sql="SELECT user_id as user_id from user where email_id='$user_email'"; 
  $result1 = mysqli_fetch_array(mysqli_query($con,$sql));
  
  //getting file info from the request 
@@ -81,7 +81,7 @@ $sql = "INSERT INTO rentProducts(idrent,prodname,prodimageurl,rentperday,user_id
  */
  function getFileName(){
  $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect...');
- $sql = "SELECT max(id_rent) as id FROM rentProducts";
+ $sql = "SELECT max(idrent) as id FROM rentProducts";
  $result = mysqli_fetch_array(mysqli_query($con,$sql));
  
  mysqli_close($con);
