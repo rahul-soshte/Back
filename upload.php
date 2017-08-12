@@ -10,9 +10,9 @@
  $server_ip = gethostbyname(gethostname());
  
    //creating the upload url 
-   // $upload_url = 'http://'.$server_ip.'/Planmap/'.$upload_path; 
+    $upload_url = 'http://'.$server_ip.'/Planmap/'.$upload_path; 
 
- $upload_url = 'http://192.168.0.3/Planmap/'.$upload_path;
+ //$upload_url = 'http://192.168.0.4/Planmap/'.$upload_path;
  //response array 
  $response = array(); 
 
@@ -28,6 +28,8 @@
  $name = $_POST['name'];
  $rentPerDay=$_POST['rentperday'];
  $user_email=$_POST['user_email'];
+$productdescription=$_POST['productdesc'];
+$contactno=$_POST['contactno'];
 
  $sql="SELECT user_id as user_id from user where email_id='$user_email'"; 
  $result1 = mysqli_fetch_array(mysqli_query($con,$sql));
@@ -49,7 +51,7 @@
  //saving the file 
  move_uploaded_file($_FILES['image']['tmp_name'],$file_path);
  //$sql = "INSERT INTO `Planmap`.`imageupload` (`id`, `url`, `name`) VALUES (NULL, '$file_url', '$name');";
-$sql = "INSERT INTO rentProducts(idrent,prodname,prodimageurl,rentperday,user_id) VALUES (NULL,'$name','$file_url',$rentPerDay,{$result1['user_id']});";
+$sql = "INSERT INTO rentProducts(idrent,prodname,prodimageurl,proddesc,usercontact,rentperday,user_id) VALUES (NULL,'$name','$file_url','$productdescription','$contactno',$rentPerDay,{$result1['user_id']});";
 
  //adding the path and name to database 
  if(mysqli_query($con,$sql)){
