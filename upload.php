@@ -1,3 +1,4 @@
+
 <?php 
  
  //importing dbDetails file 
@@ -10,9 +11,9 @@
  $server_ip = gethostbyname(gethostname());
  
    //creating the upload url 
-    $upload_url = 'http://'.$server_ip.'/Planmap/'.$upload_path; 
+ //   $upload_url = 'http://'.$server_ip.'/Planmap/'.$upload_path; 
 
- //$upload_url = 'http://192.168.0.4/Planmap/'.$upload_path;
+ $upload_url = 'http://192.168.0.4/Planmap/'.$upload_path;
  //response array 
  $response = array(); 
 
